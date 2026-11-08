@@ -1,0 +1,214 @@
+/* -------------------------------------------------
+   Globales Reset & Grundstil
+   ------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --thumb-size: 20px;
+}
+
+html {
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f9fafb;
+    color: #222;
+    padding: 1rem;
+}
+
+/* -------------------------------------------------
+   Header
+   ------------------------------------------------- */
+header {
+    padding: 0.8rem 0;
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    border-radius: 0.6rem;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* -------------------------------------------------
+   Buttons & Navigation
+   ------------------------------------------------- */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.range-btn,
+.action-btn,
+.nav-btn {
+    background: #3498db;
+    color: #fff;
+}
+
+.range-btn:hover,
+.action-btn:hover,
+.nav-btn:hover {
+    background: #2980b9;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.nav-btn {
+    margin-left: 0.5rem;
+}
+
+/* -------------------------------------------------
+   Grid für die Auswahl-Buttons
+   ------------------------------------------------- */
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    margin-top: 2rem;
+}
+
+/* -------------------------------------------------
+   Wrapper
+   ------------------------------------------------- */
+.interactive-wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* -------------------------------------------------
+   Slider + Referenz-Labels
+   ------------------------------------------------- */
+.slider-wrapper {
+    position: relative;
+    height: 120px;
+    padding-top: 30px;
+}
+
+/* Slider selbst */
+.slider {
+    display: block;
+    width: 100%;
+    height: 0.6rem;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Track */
+.slider::-webkit-slider-runnable-track {
+    height: 4px;
+    background: #ddd;
+    border-radius: 2px;
+}
+
+.slider::-moz-range-track {
+    height: 4px;
+    background: #ddd;
+    border-radius: 2px;
+}
+
+/* Reglerknopf */
+.slider::-webkit-slider-thumb {
+    width: var(--thumb-size);
+    height: var(--thumb-size);
+    margin-top: -8px;
+    border: 0;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.slider::-moz-range-thumb {
+    width: var(--thumb-size);
+    height: var(--thumb-size);
+    border: 0;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
+}
+
+/* Referenzwerte und Lösungspunkt */
+.ref-labels {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.ref-labels span {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    color: #000;
+    font-size: 36px;
+    white-space: nowrap;
+}
+
+.solution-marker {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: red;
+    transform: translate(-50%, -50%);
+}
+
+/* -------------------------------------------------
+   Feedback-Box
+   ------------------------------------------------- */
+.feedback {
+    min-height: 2rem;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* -------------------------------------------------
+   Score-Anzeige
+   ------------------------------------------------- */
+.score {
+    font-size: 2rem;
+}
+
+/* -------------------------------------------------
+   Responsives Layout
+   ------------------------------------------------- */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .ref-labels span {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Zahlenstrahl – Übung</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="game-page">
+
+    <header class="game-header">
+        <button id="backBtn" class="nav-btn">← Zurück zur Hauptseite</button>
+        <div id="score" class="score"></div>   <!-- leer → kein Stern zu Beginn -->
+    </header>
+
+    <main>
+        <h2 id="question">Wo befindet sich die Zahl …?</h2>
+
+        <!-- 80 % des Bildschirms, enthält Slider + Referenz‑Labels -->
+        <div class="interactive-wrapper">
+
+            <div class="slider-wrapper">
+                <input type="range" id="slider" class="slider" min="0" max="1000" step="1">
+                <!-- Container für die Referenz‑Beschriftungen -->
+                <div id="ref-labels" class="ref-labels"></div>
+            </div>
+
+        </div>
+
+        <div class="controls">
+            <button id="checkBtn" class="action-btn">Überprüfen</button>
+            <button id="helpBtn" class="action-btn">Hilfe</button>
+            <button id="solutionBtn" class="action-btn hidden">Lösung zeigen</button>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+    </main>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
